@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lista de canciones</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/canciones.css">
+  </head>
+  <body>
+    <div class="text-center mt-5">
+        <a href="/" class="btn btn-primary">Volver a inicio</a>
+    </div>
+    <div class="container">
+      <h1 class="my-4">Lista de canciones</h1>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Género</th>
+            <th>Artista</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% canciones.forEach((cancion) => { %>
+            <tr>
+              <td><%= cancion.nombre %></td>
+              <td><%= cancion.genero.nombre %></td>
+              <td><%= cancion.artista.nombre %></td>
+            </tr>
+          <% }); %>
+        </tbody>
+      </table>
+    </div>
+    <div class="text-center">
+        <a href="/agregar-cancion" class="btn btn-primary">Agregar Cancion</a>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+  </body>
+</html>

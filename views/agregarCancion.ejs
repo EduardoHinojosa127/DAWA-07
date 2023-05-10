@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Agregar canción</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="text-center mt-5">
+        <a href="/canciones" class="btn btn-primary">Volver a canciones</a>
+    </div>
+    <div class="container">
+      <h1 class="my-4">Agregar canción</h1>
+      <form action="/canciones" method="POST">
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingrese el nombre de la canción">
+        </div>
+        <div class="form-group">
+          <label for="genero">Género</label>
+          <select class="form-control" id="genero" name="genero">
+            <% generos.forEach((genero) => { %>
+              <option value="<%= genero._id %>"><%= genero.nombre %></option>
+            <% }); %>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="artista">Artista</label>
+          <select class="form-control" id="artista" name="artista">
+            <% artistas.forEach((artista) => { %>
+              <option value="<%= artista._id %>"><%= artista.nombre %></option>
+            <% }); %>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Agregar canción</button>
+      </form>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+  </body>
+</html>
